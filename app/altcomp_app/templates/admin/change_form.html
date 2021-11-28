@@ -1,0 +1,13 @@
+{% extends "admin/change_form.html" %}
+{% load i18n template_tags%}
+{% block submit_buttons_bottom %}
+    {% if original|is_notifications %}
+    <div class="card card-primary card-outline">
+        <div class="card-body">
+            <input type="button" class="btn btn-outline-success form-control" id="seen_notify" value="{% trans 'Notification seen' %}" name="_anotherbutton"/>
+        </div>
+
+    </div>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}
