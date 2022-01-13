@@ -15,6 +15,20 @@ HEADERS = {
 }
 
 
+class Accessory(models.Model):
+    name = models.CharField(max_length=250, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+class AccessoryProxy(Accessory):
+    class Meta:
+        proxy = True
+        app_label = 'tasks_system'
+        verbose_name = 'Accessory'
+        verbose_name_plural = 'Accessories'
+
+
 class Device(models.Model):
     name = models.CharField(max_length=255, blank=True)
     brand = models.CharField(max_length=12, blank=True)
@@ -105,7 +119,8 @@ class Laptop(Device):
         super().clean()
         passed, data = self.import_external()
         if not passed:
-            raise ValidationError({'external_link': ValidationError('Check configuration - cannot find HTML elements.')})
+            raise ValidationError(
+                {'external_link': ValidationError('Check configuration - cannot find HTML elements.')})
 
     def save(self, *args, **kwargs):
         if self._state.adding:

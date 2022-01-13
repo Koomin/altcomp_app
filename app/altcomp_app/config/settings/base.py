@@ -52,7 +52,10 @@ INSTALLED_APPS = [
     'altcomp_app.properties',
     'altcomp_app.notifications',
     'altcomp_app.settings',
-    'altcomp_app.price_tracker'
+    'altcomp_app.price_tracker',
+    'altcomp_app.core',
+    'altcomp_app.tasks_system',
+    'altcomp_app.customers',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +138,7 @@ JAZZMIN_SETTINGS = {"site_title": "ALTCOMP",
                     "site_brand": "ALTCOMP",
                     "show_ui_builder": False,
                     "changeform_format": "collapsible",
+                    "related_modal_active": True,
                     "icons": {
                         "dashboard": "fas fa-chart-bar",
                         "price_tracker.shopproxy": "fas fa-barcode",
@@ -152,30 +156,30 @@ JAZZMIN_UI_TWEAKS = {
     "brand_small_text": False,
     "brand_colour": False,
     "accent": "accent-primary",
-    "navbar": "navbar-dark",
+    "navbar": "navbar-white navbar-light",
     "no_navbar_border": False,
-    "navbar_fixed": True,
+    "navbar_fixed": False,
     "layout_boxed": False,
     "footer_fixed": False,
-    "sidebar_fixed": False,
+    "sidebar_fixed": True,
     "sidebar": "sidebar-dark-primary",
     "sidebar_nav_small_text": False,
     "sidebar_disable_expand": False,
-    "sidebar_nav_child_indent": False,
+    "sidebar_nav_child_indent": True,
     "sidebar_nav_compact_style": False,
     "sidebar_nav_legacy_style": False,
     "sidebar_nav_flat_style": False,
-    "theme": "superhero",
+    "theme": "cosmo",
     "dark_mode_theme": None,
     "button_classes": {
-        "primary": "btn-primary",
-        "secondary": "btn-secondary",
+        "primary": "btn-outline-primary",
+        "secondary": "btn-outline-secondary",
         "info": "btn-outline-info",
         "warning": "btn-outline-warning",
         "danger": "btn-outline-danger",
         "success": "btn-outline-success"
     },
-
+    "actions_sticky_top": True
 }
 
 EMAIL_HOST = get_env_variable('EMAIL_HOST')
