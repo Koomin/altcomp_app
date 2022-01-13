@@ -1,3 +1,5 @@
-from django.contrib import admin
+from simple_history.admin import SimpleHistoryAdmin
 
-# Register your models here.
+
+class HistoryAdmin(SimpleHistoryAdmin):
+    readonly_fields = ['created', 'modified']

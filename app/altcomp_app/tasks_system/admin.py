@@ -7,6 +7,8 @@ from altcomp_app.tasks_system.models import Task, TaskClosed, TaskOpen, Comment
 
 from altcomp_app.customers.models import CustomerProxy
 
+from altcomp_app.core.admin import HistoryAdmin
+
 
 class AccessoryAdmin(admin.ModelAdmin):
     pass
@@ -18,7 +20,7 @@ class CommentInline(admin.StackedInline):
     extra = 1
 
 
-class TaskAdmin(admin.ModelAdmin):
+class TaskAdmin(HistoryAdmin):
     list_display = ('task_number', 'device_name', 'deadline', 'device_type',
                     'technician', 'status', 'priority', 'created')
     fields = ('device_type', 'device_name',
@@ -44,11 +46,20 @@ class TaskAdmin(admin.ModelAdmin):
 
 
 class TaskClosedAdmin(TaskAdmin):
+    readonly_fields = ('device_type', 'device_name',
+                       'accessories',
+                       'customer', 'deadline',
+                       'send_notification', 'priority',
+                       'fault_description', 'repair_description',
+                       'estimated_price', 'price',
+                       'technician', 'registrant',
+                       'status',)
+
     def get_queryset(self, request):
         return super().get_queryset(request).filter(status=Task.Status.CLOSED)
 
-    def has_change_permission(self, request, obj=None):
-        return False
+    # def has_change_permission(self, request, obj=None):
+    #     return False
 
     def has_add_permission(self, request):
         return False
