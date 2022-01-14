@@ -1,5 +1,3 @@
-from functools import update_wrapper
-
 from django.contrib import admin
 from django.contrib.admin import AdminSite
 from django.template.response import TemplateResponse
@@ -11,7 +9,7 @@ from altcomp_app.devices.models import Laptop
 
 from altcomp_app.settings.models import UserProxy
 
-from altcomp_app.tasks_system.models import TaskOpen
+from altcomp_app.tasks_system.models import TaskOpen, TaskClosed
 
 
 class AltcompAdmin(AdminSite):
@@ -30,6 +28,7 @@ class AltcompAdmin(AdminSite):
                    'notifications_count': NotificationProxy.objects.all().count(),
                    'laptops_count': Laptop.objects.all().count(),
                    'open_tasks_count': TaskOpen.objects.all().count(),
+                   'closed_tasks_count': TaskClosed.objects.all().count(),
                    **(extra_context or {}), }
         return TemplateResponse(request, 'index.html', context)
 

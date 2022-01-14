@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from altcomp_app.core.models import HistoryModel
+from altcomp_app.tasks_system.managers import TaskOpenManager, TaskClosedManager
 
 
 class Task(HistoryModel):
@@ -41,6 +42,8 @@ class Task(HistoryModel):
 
 
 class TaskClosed(Task):
+    objects = TaskClosedManager()
+
     class Meta:
         proxy = True
         verbose_name = _('Closed task')
@@ -48,6 +51,8 @@ class TaskClosed(Task):
 
 
 class TaskOpen(Task):
+    objects = TaskOpenManager()
+
     class Meta:
         proxy = True
         verbose_name = _('Open task')

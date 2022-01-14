@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django import forms
 from django.utils.translation import gettext_lazy as _
 from altcomp_app.devices.models import AccessoryProxy
 from altcomp_app.settings.admin import admin_site
@@ -54,20 +55,15 @@ class TaskClosedAdmin(TaskAdmin):
                        'technician', 'registrant',
                        'status',)
 
-    def get_queryset(self, request):
-        return super().get_queryset(request).filter(status=Task.Status.CLOSED)
-
-    # def has_change_permission(self, request, obj=None):
-    #     return False
-
     def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
         return False
 
 
 class TaskOpenAdmin(TaskAdmin):
     list_editable = ('technician', 'status', 'priority')
-    def get_queryset(self, request):
-        return super().get_queryset(request).filter(status=Task.Status.OPEN)
 
 
 class CustomerAdmin(admin.ModelAdmin):

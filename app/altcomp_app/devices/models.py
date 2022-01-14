@@ -21,6 +21,7 @@ class Accessory(models.Model):
     def __str__(self):
         return self.name
 
+
 class AccessoryProxy(Accessory):
     class Meta:
         proxy = True

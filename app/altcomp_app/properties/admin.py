@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericStackedInline
 
-from altcomp_app.properties.models import Price, InternalSales, Config
+from altcomp_app.properties.models import Price, InternalSales, Config, Category
+from altcomp_app.settings.admin import admin_site
 
 
 class PriceInline(GenericStackedInline):
@@ -36,3 +37,9 @@ class ConfigInline(admin.StackedInline):
     list_display = ['data']
     model = Config
 
+
+class CategoryAdmin(admin.ModelAdmin):
+    pass
+
+
+admin_site.register(Category, CategoryAdmin)

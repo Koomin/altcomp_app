@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.forms',
     'django_crontab',
     'simple_history',
     'altcomp_app.devices',
@@ -70,6 +71,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'altcomp_app.config.urls'
+
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 TEMPLATES = [
     {
@@ -152,6 +155,7 @@ JAZZMIN_SETTINGS = {"site_title": "ALTCOMP",
                         "tasks_system.taskclosed": "fas fa-times",
                         "tasks_system.accessoryproxy": "fas fa-plug",
                     },
+                    "hide_apps": ["customers", "devices", "properties"]
                     }
 
 JAZZMIN_UI_TWEAKS = {
