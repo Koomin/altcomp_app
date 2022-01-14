@@ -146,6 +146,11 @@ JAZZMIN_SETTINGS = {"site_title": "ALTCOMP",
                         "price_tracker.laptopproxy": "fas fa-laptop",
                         "settings.notificationproxy": "fas fa-bell",
                         "settings.notificationconfigproxy": "fas fa-cogs",
+                        "settings.userproxy": "fas fa-user",
+                        "tasks_system.customerproxy": "fas fa-users",
+                        "tasks_system.taskopen": "fas fa-tasks",
+                        "tasks_system.taskclosed": "fas fa-times",
+                        "tasks_system.accessoryproxy": "fas fa-plug",
                     },
                     }
 

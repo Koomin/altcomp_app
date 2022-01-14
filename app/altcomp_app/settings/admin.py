@@ -9,6 +9,10 @@ from django.views.decorators.cache import never_cache
 from altcomp_app.notifications.models import NotificationConfigProxy, NotificationProxy
 from altcomp_app.devices.models import Laptop
 
+from altcomp_app.settings.models import UserProxy
+
+from altcomp_app.tasks_system.models import TaskOpen
+
 
 class AltcompAdmin(AdminSite):
     site_header = 'Monty Python administration'
@@ -25,6 +29,7 @@ class AltcompAdmin(AdminSite):
                    'notifications': NotificationProxy.objects.filter(viewed=False),
                    'notifications_count': NotificationProxy.objects.all().count(),
                    'laptops_count': Laptop.objects.all().count(),
+                   'open_tasks_count': TaskOpen.objects.all().count(),
                    **(extra_context or {}), }
         return TemplateResponse(request, 'index.html', context)
 
@@ -55,5 +60,10 @@ class NotificationAdmin(admin.ModelAdmin):
     link_click.short_description = 'Link'
 
 
+class UserAdmin(admin.ModelAdmin):
+    pass
+
+
 admin_site.register(NotificationProxy, NotificationAdmin)
 admin_site.register(NotificationConfigProxy, NotificationConfigAdmin)
+admin_site.register(UserProxy, UserAdmin)

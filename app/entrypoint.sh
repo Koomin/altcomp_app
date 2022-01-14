@@ -12,6 +12,7 @@ then
 fi
 
 crond &
+python manage.py collectstatic --noinput
 python manage.py migrate
 python manage.py crontab add
 

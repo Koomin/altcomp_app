@@ -33,13 +33,12 @@ class TaskAdmin(HistoryAdmin):
               'status',)
 
     list_filter = ('device_type', 'priority', 'technician')
-    list_editable = ('technician', 'status', 'priority')
     inlines = (CommentInline,)
 
     def task_number(self, obj):
         return obj.pk
 
-    task_number.short_description = _('Task number')
+    task_number.short_description = _('No.')
 
     def has_delete_permission(self, request, obj=None):
         return False
@@ -66,6 +65,7 @@ class TaskClosedAdmin(TaskAdmin):
 
 
 class TaskOpenAdmin(TaskAdmin):
+    list_editable = ('technician', 'status', 'priority')
     def get_queryset(self, request):
         return super().get_queryset(request).filter(status=Task.Status.OPEN)
 
