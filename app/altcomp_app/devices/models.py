@@ -5,6 +5,7 @@ from selectolax.parser import HTMLParser
 from django.contrib.contenttypes.fields import GenericRelation
 from django.core.exceptions import FieldDoesNotExist, ValidationError
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from altcomp_app.properties.models import Shop, Category, Price, InternalSales
 from altcomp_app.notifications.models import Notification
@@ -16,7 +17,11 @@ HEADERS = {
 
 
 class Accessory(models.Model):
-    name = models.CharField(max_length=250, null=False, blank=False)
+    name = models.CharField(max_length=250, null=False, blank=False, verbose_name=_('Name'))
+
+    class Meta:
+        verbose_name = _('Accessory')
+        verbose_name_plural = _('Accessories')
 
     def __str__(self):
         return self.name
@@ -26,23 +31,23 @@ class AccessoryProxy(Accessory):
     class Meta:
         proxy = True
         app_label = 'tasks_system'
-        verbose_name = 'Accessory'
-        verbose_name_plural = 'Accessories'
+        verbose_name = _('Accessory')
+        verbose_name_plural = _('Accessories')
 
 
 class Device(models.Model):
-    name = models.CharField(max_length=255, blank=True)
-    brand = models.CharField(max_length=12, blank=True)
-    model = models.CharField(max_length=255, blank=True)
-    manufacturer_code = models.CharField(max_length=255, blank=True)
-    shop_code = models.CharField(max_length=255, blank=True)
-    availability = models.BooleanField(default=True)
-    shop = models.ForeignKey(Shop, on_delete=models.CASCADE, blank=False)
-    category = models.ManyToManyField(Category, blank=True)
-    external_link = models.URLField()
-    price = GenericRelation(Price)
-    internal_sales = GenericRelation(InternalSales)
-    notification = GenericRelation(Notification)
+    name = models.CharField(max_length=255, blank=True, verbose_name=_('Name'))
+    brand = models.CharField(max_length=12, blank=True, verbose_name=_('Brand'))
+    model = models.CharField(max_length=255, blank=True, verbose_name=_('Model'))
+    manufacturer_code = models.CharField(max_length=255, blank=True, verbose_name=_('Manufacturer code'))
+    shop_code = models.CharField(max_length=255, blank=True, verbose_name=_('Shop code'))
+    availability = models.BooleanField(default=True, verbose_name=_('Availability'))
+    shop = models.ForeignKey(Shop, on_delete=models.CASCADE, blank=False, verbose_name=_('Shop'))
+    category = models.ManyToManyField(Category, blank=True, verbose_name=_('Category'))
+    external_link = models.URLField(verbose_name=_('External link'))
+    price = GenericRelation(Price, verbose_name=_('Price'))
+    internal_sales = GenericRelation(InternalSales, verbose_name=_('Internal sales'))
+    notification = GenericRelation(Notification, verbose_name=_('Notification'))
 
     class Meta:
         abstract = True
@@ -67,6 +72,10 @@ class Device(models.Model):
 
 
 class Laptop(Device):
+    class Meta:
+        verbose_name = _('Laptop')
+        verbose_name_plural = _('Laptops')
+
     def import_external(self):
         response = requests.get(self.external_link, headers=HEADERS)
         if response.status_code == 200:
@@ -161,17 +170,21 @@ class LaptopProxy(Laptop):
     class Meta:
         proxy = True
         app_label = 'price_tracker'
-        verbose_name = 'Laptop'
-        verbose_name_plural = 'Laptops'
+        verbose_name = _('Laptop')
+        verbose_name_plural = _('Laptops')
 
 
 class LaptopSpecification(models.Model):
-    laptop = models.ForeignKey(Laptop, on_delete=models.CASCADE)
-    memory = models.IntegerField(blank=True)
-    processor = models.CharField(max_length=1025, blank=True)
-    graphic_card = models.CharField(max_length=255, blank=True)
-    drive_capacity = models.IntegerField(blank=True)
-    drive_type = models.CharField(max_length=3, blank=True)
-    screen_size = models.DecimalField(max_digits=2, decimal_places=1, blank=True)
-    screen_resolution = models.CharField(max_length=25, blank=True)
-    system = models.BooleanField(default=False)
+    laptop = models.ForeignKey(Laptop, on_delete=models.CASCADE, verbose_name=_('Laptop'))
+    memory = models.IntegerField(blank=True, verbose_name=_('Memory'))
+    processor = models.CharField(max_length=1025, blank=True, verbose_name=_('Processor'))
+    graphic_card = models.CharField(max_length=255, blank=True, verbose_name=_('Graphic Card'))
+    drive_capacity = models.IntegerField(blank=True, verbose_name=_('Drive capacity'))
+    drive_type = models.CharField(max_length=3, blank=True, verbose_name=_('Drive type'))
+    screen_size = models.DecimalField(max_digits=2, decimal_places=1, blank=True, verbose_name=_('Screen size'))
+    screen_resolution = models.CharField(max_length=25, blank=True, verbose_name=_('Screen resolution'))
+    system = models.BooleanField(default=False, verbose_name=_('System'))
+
+    class Meta:
+        verbose_name = _('Laptop specification')
+        verbose_name_plural = _('Laptops specifications')

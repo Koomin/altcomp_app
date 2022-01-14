@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
 
 from altcomp_app.devices.admin import LaptopSpecificationAdmin
 from altcomp_app.devices.models import LaptopProxy
 from altcomp_app.properties.admin import InternalSalesInline, PriceInline, ConfigInline
 from altcomp_app.properties.models import Price, CategoryProxy, ShopProxy
-from altcomp_app.settings.admin import admin_site, AltcompAdmin
+from altcomp_app.settings.admin import admin_site
 
 
 class LaptopAdmin(admin.ModelAdmin):
@@ -25,7 +26,7 @@ class LaptopAdmin(admin.ModelAdmin):
         except ObjectDoesNotExist:
             return '- zł'
 
-    internal_price.short_description = 'Internal price'
+    internal_price.short_description = _('Internal price')
 
     def external_price(self, obj):
         try:
@@ -33,7 +34,7 @@ class LaptopAdmin(admin.ModelAdmin):
         except ObjectDoesNotExist:
             return '- zł'
 
-    external_price.short_description = 'External price'
+    external_price.short_description = _('External price')
 
     def internal_link(self, obj):
         try:
@@ -41,12 +42,12 @@ class LaptopAdmin(admin.ModelAdmin):
         except (ObjectDoesNotExist, AttributeError):
             return '-'
 
-    internal_link.short_description = 'Internal link'
+    internal_link.short_description = _('Internal link')
 
     def external_link_list(self, obj):
         return mark_safe(f'<a href="{obj.external_link}" target="_blank">CLICK!</a>')
 
-    external_link_list.short_description = 'External link'
+    external_link_list.short_description = _('External link')
 
 
 class CategoryAdmin(admin.ModelAdmin):

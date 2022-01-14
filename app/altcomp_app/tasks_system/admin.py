@@ -1,10 +1,10 @@
 from django.contrib import admin
-from django import forms
+
 from django.utils.translation import gettext_lazy as _
 from altcomp_app.devices.models import AccessoryProxy
 from altcomp_app.settings.admin import admin_site
 
-from altcomp_app.tasks_system.models import Task, TaskClosed, TaskOpen, Comment
+from altcomp_app.tasks_system.models import TaskClosed, TaskOpen, Comment
 
 from altcomp_app.customers.models import CustomerProxy
 

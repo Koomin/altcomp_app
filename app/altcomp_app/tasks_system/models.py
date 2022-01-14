@@ -22,23 +22,26 @@ class Task(HistoryModel):
         CRITICAL = 1, _('Critical')
 
     device_type = models.ForeignKey('properties.Category', on_delete=models.CASCADE, null=False, blank=False,
-                                    related_name='tasks')
-    device_name = models.CharField(max_length=250, null=False, blank=False)
-    accessories = models.ManyToManyField('devices.Accessory', related_name='tasks')
+                                    related_name='tasks', verbose_name=_('Device type'))
+    device_name = models.CharField(max_length=250, null=False, blank=False, verbose_name=_('Device name'))
+    accessories = models.ManyToManyField('devices.Accessory', related_name='tasks', verbose_name=_('Accessories'))
     customer = models.ForeignKey('customers.Customer', on_delete=models.CASCADE, null=False, blank=False,
-                                 related_name='tasks')
-    technician = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True, blank=True, related_name='tasks')
-    registrant = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=False, blank=False)
-    fault_description = models.TextField()
-    repair_description = models.TextField(null=True, blank=True)
-    estimated_price = models.DecimalField(max_digits=12, decimal_places=2)
-    price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
-    deadline = models.DateField(null=False, blank=False)
-    status = models.CharField(max_length=5, choices=Status.choices, blank=False, null=False, default=Status.OPEN)
+                                 related_name='tasks', verbose_name=_('Customer'))
+    technician = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True, blank=True, related_name='tasks',
+                                   verbose_name=_('Technician'))
+    registrant = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=False, blank=False,
+                                   verbose_name=_('Registrant'))
+    fault_description = models.TextField(verbose_name=_('Fault description'))
+    repair_description = models.TextField(null=True, blank=True, verbose_name=_('Repair description'))
+    estimated_price = models.DecimalField(max_digits=12, decimal_places=2, verbose_name=_('Estimated price'))
+    price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True, verbose_name=_('Price'))
+    deadline = models.DateField(null=False, blank=False, verbose_name=_('Deadline'))
+    status = models.CharField(max_length=5, choices=Status.choices, blank=False, null=False, default=Status.OPEN,
+                              verbose_name=_('Status'))
     send_notification = models.CharField(max_length=5, choices=NotificationType.choices, blank=False, null=False,
-                                         default=NotificationType.NO)
+                                         default=NotificationType.NO, verbose_name=_('Send notification'))
     priority = models.IntegerField(choices=PriorityLevels.choices, blank=False, null=False,
-                                   default=PriorityLevels.NORMAL)
+                                   default=PriorityLevels.NORMAL, verbose_name=_('Priority'))
 
 
 class TaskClosed(Task):
@@ -60,5 +63,5 @@ class TaskOpen(Task):
 
 
 class Comment(HistoryModel):
-    description = models.TextField()
+    description = models.TextField(verbose_name=_('Description'))
     task = models.ForeignKey(Task, on_delete=models.CASCADE, null=False, blank=False)

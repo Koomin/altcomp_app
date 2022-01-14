@@ -1,6 +1,7 @@
 __pycache__/
 .idea
 /venv/*
+/app/altcomp_app/static/
 .env.dev
 .env.prod
 .env.prod.db

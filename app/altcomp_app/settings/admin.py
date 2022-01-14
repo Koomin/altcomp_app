@@ -3,6 +3,7 @@ from django.contrib.admin import AdminSite
 from django.template.response import TemplateResponse
 from django.utils.safestring import mark_safe
 from django.views.decorators.cache import never_cache
+from django.utils.translation import gettext_lazy as _
 
 from altcomp_app.notifications.models import NotificationConfigProxy, NotificationProxy
 from altcomp_app.devices.models import Laptop
@@ -23,7 +24,7 @@ class AltcompAdmin(AdminSite):
     @never_cache
     def index(self, request, extra_context=None):
         context = {**self.each_context(request),
-                   'title': 'Dashboard',
+                   'title': _('Dashboard'),
                    'notifications': NotificationProxy.objects.filter(viewed=False),
                    'notifications_count': NotificationProxy.objects.all().count(),
                    'laptops_count': Laptop.objects.all().count(),
@@ -53,7 +54,8 @@ class NotificationAdmin(admin.ModelAdmin):
 
     def link_click(self, obj):
         return mark_safe(
-            f'<a href="{obj.link}" class="changelist-edit">' '<i class="material-icons changelist-icon">edit</i></a>'
+            f'<a href="{obj.link}" class="changelist-edit">'
+            f'<i class="material-icons changelist-icon">{_("edit")}</i></a>'
         )
 
     link_click.short_description = 'Link'
