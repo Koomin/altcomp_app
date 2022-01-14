@@ -13,14 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.urls import path, include
 from altcomp_app.notifications import urls
 from altcomp_app.settings.admin import admin_site
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
-    path('', include('altcomp_app.settings.urls')),
-    path('', include(urls)),
-    path('', include('altcomp_app.devices.urls')),
-    path('', admin_site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
 
 ]
+
+urlpatterns += i18n_patterns(path('', include('altcomp_app.settings.urls')),
+                             path('', include(urls)),
+                             path('', include('altcomp_app.devices.urls')),
+                             path('', admin_site.urls), prefix_default_language=False)

@@ -1,0 +1,463 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-14 12:06+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+#: altcomp_app/core/apps.py:7 altcomp_app/core/apps.py:8
+msgid "Core"
+msgstr ""
+
+#: altcomp_app/core/models.py:8 altcomp_app/notifications/models.py:9
+#: altcomp_app/properties/models.py:17
+msgid "Created"
+msgstr "Utworzono"
+
+#: altcomp_app/core/models.py:9
+msgid "Modified"
+msgstr "Zmodyfikowano"
+
+#: altcomp_app/core/models.py:10
+msgid "History"
+msgstr "Historia"
+
+#: altcomp_app/customers/apps.py:7 altcomp_app/customers/apps.py:8
+#: altcomp_app/customers/models.py:14 altcomp_app/customers/models.py:25
+msgid "Customers"
+msgstr "Klienci"
+
+#: altcomp_app/customers/models.py:7
+msgid "First Name"
+msgstr "Imię"
+
+#: altcomp_app/customers/models.py:8
+msgid "Last Name"
+msgstr "Nazwisko"
+
+#: altcomp_app/customers/models.py:9
+msgid "Phone number"
+msgstr "Numer telefonu"
+
+#: altcomp_app/customers/models.py:10 altcomp_app/tasks_system/models.py:15
+msgid "E-mail"
+msgstr "E-mail"
+
+#: altcomp_app/customers/models.py:13 altcomp_app/customers/models.py:24
+#: altcomp_app/tasks_system/models.py:29
+msgid "Customer"
+msgstr "Klient"
+
+#: altcomp_app/devices/apps.py:7
+msgid "Device"
+msgstr "Urządzenie"
+
+#: altcomp_app/devices/apps.py:8
+msgid "Devices"
+msgstr "Urządzenia"
+
+#: altcomp_app/devices/models.py:20 altcomp_app/devices/models.py:39
+#: altcomp_app/properties/models.py:48 altcomp_app/properties/models.py:70
+msgid "Name"
+msgstr "Nazwa"
+
+#: altcomp_app/devices/models.py:23 altcomp_app/devices/models.py:34
+msgid "Accessory"
+msgstr "Akcesorium"
+
+#: altcomp_app/devices/models.py:24 altcomp_app/devices/models.py:35
+#: altcomp_app/tasks_system/models.py:27
+msgid "Accessories"
+msgstr "Akcesoria"
+
+#: altcomp_app/devices/models.py:40
+msgid "Brand"
+msgstr "Marka"
+
+#: altcomp_app/devices/models.py:41
+msgid "Model"
+msgstr "Model"
+
+#: altcomp_app/devices/models.py:42
+msgid "Manufacturer code"
+msgstr "Kod producenta"
+
+#: altcomp_app/devices/models.py:43
+msgid "Shop code"
+msgstr "Kod sklepu"
+
+#: altcomp_app/devices/models.py:44
+msgid "Availability"
+msgstr "Dostępność"
+
+#: altcomp_app/devices/models.py:45 altcomp_app/properties/models.py:51
+#: altcomp_app/properties/models.py:59 altcomp_app/properties/models.py:92
+msgid "Shop"
+msgstr "Sklep"
+
+#: altcomp_app/devices/models.py:46 altcomp_app/properties/models.py:73
+#: altcomp_app/properties/models.py:84
+msgid "Category"
+msgstr "Kategoria"
+
+#: altcomp_app/devices/models.py:47 altcomp_app/price_tracker/admin.py:50
+msgid "External link"
+msgstr "Link zewnętrzny"
+
+#: altcomp_app/devices/models.py:48 altcomp_app/properties/models.py:26
+#: altcomp_app/tasks_system/models.py:37
+msgid "Price"
+msgstr "Cena"
+
+#: altcomp_app/devices/models.py:49 altcomp_app/properties/models.py:43
+#: altcomp_app/properties/models.py:44
+msgid "Internal sales"
+msgstr "Sprzedaż wewnętrzna"
+
+#: altcomp_app/devices/models.py:50 altcomp_app/notifications/models.py:18
+#: altcomp_app/notifications/models.py:56
+msgid "Notification"
+msgstr "Powiadomienie"
+
+#: altcomp_app/devices/models.py:76 altcomp_app/devices/models.py:173
+#: altcomp_app/devices/models.py:178
+msgid "Laptop"
+msgstr "Laptop"
+
+#: altcomp_app/devices/models.py:77 altcomp_app/devices/models.py:174
+msgid "Laptops"
+msgstr "Laptopy"
+
+#: altcomp_app/devices/models.py:179
+msgid "Memory"
+msgstr "Pamięć"
+
+#: altcomp_app/devices/models.py:180
+msgid "Processor"
+msgstr "Procesor"
+
+#: altcomp_app/devices/models.py:181
+msgid "Graphic Card"
+msgstr "Karta graficzna"
+
+#: altcomp_app/devices/models.py:182
+msgid "Drive capacity"
+msgstr "Pojemność dysku"
+
+#: altcomp_app/devices/models.py:183
+msgid "Drive type"
+msgstr "Typ dysku"
+
+#: altcomp_app/devices/models.py:184
+msgid "Screen size"
+msgstr "Rozmiar ekranu"
+
+#: altcomp_app/devices/models.py:185
+msgid "Screen resolution"
+msgstr "Rozdzielczość"
+
+#: altcomp_app/devices/models.py:186
+msgid "System"
+msgstr "System"
+
+#: altcomp_app/devices/models.py:189
+msgid "Laptop specification"
+msgstr "Specyfikacja"
+
+#: altcomp_app/devices/models.py:190
+msgid "Laptops specifications"
+msgstr "Specyfikacja"
+
+#: altcomp_app/notifications/apps.py:7 altcomp_app/notifications/apps.py:8
+#: altcomp_app/notifications/models.py:19
+#: altcomp_app/notifications/models.py:57
+#: altcomp_app/templates/admin/base.html:126
+msgid "Notifications"
+msgstr "Powiadomienia"
+
+#: altcomp_app/notifications/models.py:10
+msgid "Viewed"
+msgstr "Obejrzane"
+
+#: altcomp_app/notifications/models.py:11
+msgid "Changes"
+msgstr "Zmiany"
+
+#: altcomp_app/notifications/models.py:12
+msgid "Link"
+msgstr "Link"
+
+#: altcomp_app/notifications/models.py:29
+msgid "Send E-mail"
+msgstr "Wyślij E-mail"
+
+#: altcomp_app/notifications/models.py:30
+msgid "Emails"
+msgstr "E-Maile"
+
+#: altcomp_app/notifications/models.py:31
+msgid "Refresh interval"
+msgstr "Częstotliwość odświeżania"
+
+#: altcomp_app/notifications/models.py:34
+#: altcomp_app/notifications/models.py:48
+msgid "Notification Config"
+msgstr "Konfiguracja powiadomienia"
+
+#: altcomp_app/notifications/models.py:35
+#: altcomp_app/notifications/models.py:49
+msgid "Notifications Config"
+msgstr "Konfiguracja powiadomień"
+
+#: altcomp_app/price_tracker/admin.py:29
+msgid "Internal price"
+msgstr "Cena wewnętrzna"
+
+#: altcomp_app/price_tracker/admin.py:37
+msgid "External price"
+msgstr "Cene zewnętrzna"
+
+#: altcomp_app/price_tracker/admin.py:45 altcomp_app/properties/models.py:35
+msgid "Internal link"
+msgstr "Link wewnętrzny"
+
+#: altcomp_app/price_tracker/apps.py:8 altcomp_app/price_tracker/apps.py:9
+msgid "Price tracker"
+msgstr "Śledzenie cen"
+
+#: altcomp_app/properties/apps.py:6 altcomp_app/properties/apps.py:7
+msgid "Properties"
+msgstr "Właściwości"
+
+#: altcomp_app/properties/models.py:12
+msgid "Internal"
+msgstr "Wewnętrzne"
+
+#: altcomp_app/properties/models.py:13
+msgid "External"
+msgstr "Zewnętrzne"
+
+#: altcomp_app/properties/models.py:16
+msgid "Value"
+msgstr "Wartość"
+
+#: altcomp_app/properties/models.py:18
+msgid "Type"
+msgstr "Typ"
+
+#: altcomp_app/properties/models.py:22
+msgid "Active"
+msgstr "Aktywny"
+
+#: altcomp_app/properties/models.py:27
+msgid "Prizes"
+msgstr "Ceny"
+
+#: altcomp_app/properties/models.py:34
+msgid "Margin"
+msgstr "Marża"
+
+#: altcomp_app/properties/models.py:36
+msgid "Avaliable items"
+msgstr "Dostępne przedmioty"
+
+#: altcomp_app/properties/models.py:37
+msgid "All items"
+msgstr "Wszsytkie przedmioty"
+
+#: altcomp_app/properties/models.py:52 altcomp_app/properties/models.py:93
+msgid "Shops"
+msgstr "Sklepy"
+
+#: altcomp_app/properties/models.py:62
+msgid "Data"
+msgstr "Dane"
+
+#: altcomp_app/properties/models.py:65
+msgid "Config"
+msgstr "Konfiguracja"
+
+#: altcomp_app/properties/models.py:66
+msgid "Configs"
+msgstr "Konfiguracje"
+
+#: altcomp_app/properties/models.py:74 altcomp_app/properties/models.py:85
+msgid "Categories"
+msgstr "Kategorie"
+
+#: altcomp_app/settings/admin.py:27 altcomp_app/templates/admin/base.html:250
+msgid "Dashboard"
+msgstr "Panel Główny"
+
+#: altcomp_app/settings/apps.py:7 altcomp_app/settings/apps.py:8
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: altcomp_app/settings/models.py:8
+msgid "User"
+msgstr "Użytkownik"
+
+#: altcomp_app/settings/models.py:9
+msgid "Users"
+msgstr "Użytkownicy"
+
+#: altcomp_app/tasks_system/admin.py:42
+msgid "No."
+msgstr "Nr"
+
+#: altcomp_app/tasks_system/apps.py:8 altcomp_app/tasks_system/apps.py:9
+msgid "Task system"
+msgstr "System zgłoszeń"
+
+#: altcomp_app/tasks_system/models.py:10
+msgid "Open"
+msgstr "Otwarty"
+
+#: altcomp_app/tasks_system/models.py:11
+msgid "Closed"
+msgstr "Zamknięty"
+
+#: altcomp_app/tasks_system/models.py:14
+msgid "SMS"
+msgstr "SMS"
+
+#: altcomp_app/tasks_system/models.py:16
+msgid "Don't notify"
+msgstr "Nie powiadamiaj"
+
+#: altcomp_app/tasks_system/models.py:19
+msgid "Low"
+msgstr "Niski"
+
+#: altcomp_app/tasks_system/models.py:20
+msgid "Normal"
+msgstr "Normalny"
+
+#: altcomp_app/tasks_system/models.py:21
+msgid "Important"
+msgstr "Ważny"
+
+#: altcomp_app/tasks_system/models.py:22
+msgid "Critical"
+msgstr "Krytyczny"
+
+#: altcomp_app/tasks_system/models.py:25
+msgid "Device type"
+msgstr "Typ urządzenia"
+
+#: altcomp_app/tasks_system/models.py:26
+msgid "Device name"
+msgstr "Nazwa"
+
+#: altcomp_app/tasks_system/models.py:31
+msgid "Technician"
+msgstr "Serwisant"
+
+#: altcomp_app/tasks_system/models.py:33
+msgid "Registrant"
+msgstr "Przyjmujący"
+
+#: altcomp_app/tasks_system/models.py:34
+msgid "Fault description"
+msgstr "Opis usterki"
+
+#: altcomp_app/tasks_system/models.py:35
+msgid "Repair description"
+msgstr "Opis naprawy"
+
+#: altcomp_app/tasks_system/models.py:36
+msgid "Estimated price"
+msgstr "Szacowany koszt"
+
+#: altcomp_app/tasks_system/models.py:38
+msgid "Deadline"
+msgstr "Termin"
+
+#: altcomp_app/tasks_system/models.py:40
+msgid "Status"
+msgstr "Status"
+
+#: altcomp_app/tasks_system/models.py:42
+msgid "Send notification"
+msgstr "Wyślij powiadomienia"
+
+#: altcomp_app/tasks_system/models.py:44
+msgid "Priority"
+msgstr "Priorytet"
+
+#: altcomp_app/tasks_system/models.py:52
+msgid "Closed task"
+msgstr "Zakończone zadanie"
+
+#: altcomp_app/tasks_system/models.py:53
+msgid "Closed tasks"
+msgstr "Zakończone zadania"
+
+#: altcomp_app/tasks_system/models.py:61
+msgid "Open task"
+msgstr "Aktywne zadanie"
+
+#: altcomp_app/tasks_system/models.py:62
+msgid "Open tasks"
+msgstr "Aktywne zadania"
+
+#: altcomp_app/tasks_system/models.py:66
+msgid "Description"
+msgstr "Opis"
+
+#: altcomp_app/templates/admin/base.html:108
+#: altcomp_app/templates/admin/base.html:109
+msgid "Search"
+msgstr "Szukaj"
+
+#: altcomp_app/templates/admin/base.html:185
+msgid "Account"
+msgstr "Konto"
+
+#: altcomp_app/templates/admin/base.html:188
+msgid "Change password"
+msgstr "Zmień hasło"
+
+#: altcomp_app/templates/admin/base.html:192
+msgid "Log out"
+msgstr "Wyloguj"
+
+#: altcomp_app/templates/admin/base.html:205
+msgid "See Profile"
+msgstr "Zobacz profil"
+
+#: altcomp_app/templates/admin/base.html:379
+msgid "UI Configuration"
+msgstr "Konfiguracja UI"
+
+#: altcomp_app/templates/admin/base.html:383
+msgid "Copy this info your settings file to persist these UI changes"
+msgstr "Skopiuj to do pliku ustawień"
+
+#: altcomp_app/templates/admin/base.html:388
+msgid "Close"
+msgstr "Zamknij"
+
+#: altcomp_app/templates/admin/change_form.html:7
+msgid "Notification seen"
+msgstr "Obejrzane powiadomienia"
+
+msgid "Comment"
+msgstr "Komentarz"
+
+msgid "Comments"
+msgstr "Komentarze"

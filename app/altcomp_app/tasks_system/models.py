@@ -65,3 +65,7 @@ class TaskOpen(Task):
 class Comment(HistoryModel):
     description = models.TextField(verbose_name=_('Description'))
     task = models.ForeignKey(Task, on_delete=models.CASCADE, null=False, blank=False)
+
+    class Meta:
+        verbose_name = _('Comment')
+        verbose_name_plural = _('Comments')

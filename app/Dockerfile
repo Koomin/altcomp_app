@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED 1
 
 RUN python -m pip install --upgrade pip
 
-RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev gettext
 COPY requirements/base.txt base.txt
 COPY requirements/local.txt requirements.txt
 RUN python -m pip install -r requirements.txt

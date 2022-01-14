@@ -4,7 +4,7 @@ from altcomp_app.core.models import HistoryModel
 
 
 class Customer(HistoryModel):
-    first_name = models.CharField(max_length=40, null=False, blank=False, verbose_name=_('Firs Name'))
+    first_name = models.CharField(max_length=40, null=False, blank=False, verbose_name=_('First Name'))
     last_name = models.CharField(max_length=60, null=False, blank=False, verbose_name=_('Last Name'))
     phone_number = models.CharField(max_length=9, null=False, blank=False, verbose_name=_('Phone number'))
     email = models.EmailField(null=True, blank=True, verbose_name=_('E-mail'))
