@@ -13,7 +13,6 @@
     <script type="text/javascript" src="{% static 'admin/js/FiltersDateTimeShortcuts.js' %}"></script>
 
 {% endblock %}
-
 {% block coltype %}flex{% endblock %}
 
 {% block bodyclass %}{{ block.super }} dashboard{% endblock %}
@@ -30,12 +29,12 @@
               <div class="inner">
                 <h3>{{ open_tasks_count }}</h3>
 
-                <p>Open tasks</p>
+                <p>{% translate "Open tasks" %}</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="/tasks_system/taskopen/add/" class="small-box-footer">Add task <i class="fas fa-plus-circle"></i></a>
+              <a href="/tasks_system/taskopen/add/" class="small-box-footer">{% translate "Add task" %} <i class="fas fa-plus-circle"></i></a>
             </div>
           </div>
         <div class="col-lg-3 col-6">
@@ -44,12 +43,12 @@
               <div class="inner">
                 <h3>{{ closed_tasks_count }}</h3>
 
-                <p>Closed tasks</p>
+                <p>{% translate "Closed tasks" %}</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="/tasks_system/taskclosed/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/tasks_system/taskclosed/" class="small-box-footer">{% translate "More info" %} <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
         <div class="col-lg-3 col-6">
@@ -58,12 +57,12 @@
               <div class="inner">
                 <h3>{{ laptops_count }}</h3>
 
-                <p>Laptops</p>
+                <p>{% translate "Laptops" %}</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="/price_tracker/laptopproxy/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/price_tracker/laptopproxy/" class="small-box-footer">{% translate "More info" %} <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
         <div class="col-lg-3 col-6">
@@ -72,17 +71,17 @@
               <div class="inner">
                 <h3>{{ notifications_count }}</h3>
 
-                <p>Notifications</p>
+                <p>{% translate "Notifications" %}</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="/settings/notificationproxy/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/settings/notificationproxy/" class="small-box-footer">{% translate "More info" %} <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
 
     </div>
-    <div><a id="update_devices" class="btn btn-outline-success"> Update devices</a></div>
+    <div><a id="update_devices" class="btn btn-outline-success"> {% translate "Update devices" %}</a></div>
 
     </div>
 {% endblock %}

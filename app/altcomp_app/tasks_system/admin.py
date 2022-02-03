@@ -23,7 +23,7 @@ class CommentInline(admin.StackedInline):
 
 class TaskAdmin(HistoryAdmin):
     list_display = ('task_number', 'device_name', 'deadline', 'device_type',
-                    'technician', 'status', 'priority', 'created')
+                    'technician', 'status', 'priority', 'duration', 'phone_number', 'created')
     fields = ('device_type', 'device_name',
               'accessories',
               'customer', 'deadline',
@@ -31,8 +31,8 @@ class TaskAdmin(HistoryAdmin):
               'fault_description', 'repair_description',
               'estimated_price', 'price',
               'technician', 'registrant',
-              'status',)
-
+              'status', 'duration')
+    list_display_links = ('device_name',)
     list_filter = ('device_type', 'priority', 'technician')
     inlines = (CommentInline,)
 
@@ -40,6 +40,11 @@ class TaskAdmin(HistoryAdmin):
         return obj.pk
 
     task_number.short_description = _('No.')
+
+    def phone_number(self, obj):
+        return obj.customer.phone_number
+
+    phone_number.short_description = _('Phone number')
 
     def has_delete_permission(self, request, obj=None):
         return False
@@ -63,7 +68,7 @@ class TaskClosedAdmin(TaskAdmin):
 
 
 class TaskOpenAdmin(TaskAdmin):
-    list_editable = ('technician', 'status', 'priority')
+    list_editable = ('technician', 'status', 'priority', 'duration')
 
 
 class CustomerAdmin(admin.ModelAdmin):

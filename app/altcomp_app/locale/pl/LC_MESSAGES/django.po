@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-14 12:06+0100\n"
+"POT-Creation-Date: 2022-02-03 18:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: altcomp_app/config/settings/base.py:120
+msgid "Polish"
+msgstr "Polski"
+
+#: altcomp_app/config/settings/base.py:121
+msgid "English"
+msgstr "Angielski"
+
 #: altcomp_app/core/apps.py:7 altcomp_app/core/apps.py:8
 msgid "Core"
 msgstr ""
@@ -49,7 +58,7 @@ msgstr "Imię"
 msgid "Last Name"
 msgstr "Nazwisko"
 
-#: altcomp_app/customers/models.py:9
+#: altcomp_app/customers/models.py:9 altcomp_app/tasks_system/admin.py:47
 msgid "Phone number"
 msgstr "Numer telefonu"
 
@@ -139,6 +148,7 @@ msgid "Laptop"
 msgstr "Laptop"
 
 #: altcomp_app/devices/models.py:77 altcomp_app/devices/models.py:174
+#: altcomp_app/settings/templates/index.html:61
 msgid "Laptops"
 msgstr "Laptopy"
 
@@ -185,6 +195,7 @@ msgstr "Specyfikacja"
 #: altcomp_app/notifications/apps.py:7 altcomp_app/notifications/apps.py:8
 #: altcomp_app/notifications/models.py:19
 #: altcomp_app/notifications/models.py:57
+#: altcomp_app/settings/templates/index.html:75
 #: altcomp_app/templates/admin/base.html:126
 msgid "Notifications"
 msgstr "Powiadomienia"
@@ -315,6 +326,30 @@ msgstr "Użytkownik"
 msgid "Users"
 msgstr "Użytkownicy"
 
+#: altcomp_app/settings/templates/index.html:16
+msgid "More info"
+msgstr "Więcej informacji"
+
+#: altcomp_app/settings/templates/index.html:33
+#: altcomp_app/tasks_system/models.py:63
+msgid "Open tasks"
+msgstr "Aktywne zadania"
+
+#: altcomp_app/settings/templates/index.html:38
+#, fuzzy
+#| msgid "Closed task"
+msgid "Add task"
+msgstr "Dodaje zadanie"
+
+#: altcomp_app/settings/templates/index.html:47
+#: altcomp_app/tasks_system/models.py:54
+msgid "Closed tasks"
+msgstr "Zakończone zadania"
+
+#: altcomp_app/settings/templates/index.html:85
+msgid "Update devices"
+msgstr "Aktualizuj urządzenia"
+
 #: altcomp_app/tasks_system/admin.py:42
 msgid "No."
 msgstr "Nr"
@@ -399,25 +434,31 @@ msgstr "Wyślij powiadomienia"
 msgid "Priority"
 msgstr "Priorytet"
 
-#: altcomp_app/tasks_system/models.py:52
+#: altcomp_app/tasks_system/models.py:45
+#, fuzzy
+#| msgid "Description"
+msgid "Duration"
+msgstr "Opis"
+
+#: altcomp_app/tasks_system/models.py:53
 msgid "Closed task"
 msgstr "Zakończone zadanie"
 
-#: altcomp_app/tasks_system/models.py:53
-msgid "Closed tasks"
-msgstr "Zakończone zadania"
-
-#: altcomp_app/tasks_system/models.py:61
+#: altcomp_app/tasks_system/models.py:62
 msgid "Open task"
 msgstr "Aktywne zadanie"
 
-#: altcomp_app/tasks_system/models.py:62
-msgid "Open tasks"
-msgstr "Aktywne zadania"
-
-#: altcomp_app/tasks_system/models.py:66
+#: altcomp_app/tasks_system/models.py:67
 msgid "Description"
 msgstr "Opis"
+
+#: altcomp_app/tasks_system/models.py:71
+msgid "Comment"
+msgstr "Komentarz"
+
+#: altcomp_app/tasks_system/models.py:72
+msgid "Comments"
+msgstr "Komentarze"
 
 #: altcomp_app/templates/admin/base.html:108
 #: altcomp_app/templates/admin/base.html:109
@@ -455,9 +496,3 @@ msgstr "Zamknij"
 #: altcomp_app/templates/admin/change_form.html:7
 msgid "Notification seen"
 msgstr "Obejrzane powiadomienia"
-
-msgid "Comment"
-msgstr "Komentarz"
-
-msgid "Comments"
-msgstr "Komentarze"

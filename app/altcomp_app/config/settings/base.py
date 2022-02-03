@@ -120,7 +120,7 @@ LANGUAGES = [
     ('pl', _('Polish')),
     ('en', _('English')),
 ]
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'CET'
 

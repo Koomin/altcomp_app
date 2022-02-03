@@ -42,6 +42,7 @@ class Task(HistoryModel):
                                          default=NotificationType.NO, verbose_name=_('Send notification'))
     priority = models.IntegerField(choices=PriorityLevels.choices, blank=False, null=False,
                                    default=PriorityLevels.NORMAL, verbose_name=_('Priority'))
+    duration = models.DurationField(null=True, blank=True, verbose_name=_('Duration'))
 
 
 class TaskClosed(Task):
