@@ -147,7 +147,7 @@ JAZZMIN_SETTINGS = {"site_title": "ALTCOMP",
                     "site_brand": "ALTCOMP",
                     "show_ui_builder": False,
                     "changeform_format": "collapsible",
-                    "related_modal_active": True,
+                    "related_modal_active": False,
                     "language_chooser": True,
                     "icons": {
                         "dashboard": "fas fa-chart-bar",
