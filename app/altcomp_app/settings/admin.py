@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin import AdminSite
+from django.contrib.auth.admin import UserAdmin
 from django.template.response import TemplateResponse
 from django.utils.safestring import mark_safe
 from django.views.decorators.cache import never_cache
@@ -60,9 +61,6 @@ class NotificationAdmin(admin.ModelAdmin):
 
     link_click.short_description = 'Link'
 
-
-class UserAdmin(admin.ModelAdmin):
-    pass
 
 
 admin_site.register(NotificationProxy, NotificationAdmin)
